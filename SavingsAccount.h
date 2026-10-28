@@ -1,6 +1,5 @@
 #ifndef BANKAPPV1_SAVINGSACCOUNT_H
 #define BANKAPPV1_SAVINGSACCOUNT_H
-
 #include <iostream>
 #include "BankAccount.h"
 
@@ -10,12 +9,11 @@ public:
         : BankAccount(accHolder, accNum, balance) {
     }
 
-    ~SavingsAccount() override {
+    ~SavingsAccount() {
         std::cout << "Savings account object deconstructed" << std::endl;
     }
 
     bool withdraw(double amount) override {
-        // Keep at least $5.00 in the savings account.
         if (amount > 0 && amount <= m_balance - 5.0) {
             m_balance -= amount;
             return true;
@@ -29,4 +27,4 @@ public:
     }
 };
 
-#endif // BANKAPPV1_SAVINGSACCOUNT_H
+#endif
