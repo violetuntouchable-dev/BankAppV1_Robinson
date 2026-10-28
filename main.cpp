@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BankAccount.h"
 #include "CheckingAccount.h"
+#include "SavingsAccount.h"
 
 int main() {  // sandbox to play with objects
     std::cout << std::endl;
@@ -16,9 +17,18 @@ int main() {  // sandbox to play with objects
     //delete customer2;
 
     std::cout << std::endl;
-    std::cout << "Checking account objects" << std::endl;
+std::cout << "Savings account objects" << std::endl;
 
-    CheckingAccount customer3("Minnie Mouse","3456789",2000.00,300.00);
+SavingsAccount savings("Daisy Duck", "9876543", 1000.00);
+savings.display();
+
+savings.withdraw(200.00);
+savings.display();
+
+std::cout << std::endl;
+std::cout << "Checking account objects" << std::endl;
+
+CheckingAccount customer3("Minnie Mouse","3456789",2000.00,300.00);
     customer3.display();
     customer3.withdraw(2200);
     customer3.display();
